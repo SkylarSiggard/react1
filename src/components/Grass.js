@@ -23,6 +23,7 @@ export default class Grass extends Component{
             name: this.props.pokemonData.name,
             img: this.props.pokemonData.sprites.front_shiny
         })
+        this.props.refreshFn()
     }
 
     render() {

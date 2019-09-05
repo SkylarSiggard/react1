@@ -13,6 +13,7 @@ header h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   color: #cc0000;
+  cursor: pointer;
 }
 
 .finder {
@@ -23,6 +24,12 @@ header h1 {
 .grass > img { /* the '>' finds any element on the right which is a direct child of the element on the left */
   width: 120px;
   height: auto;
+  cursor: pointer;
+}
+
+.grass > img:hover {
+  animation: .2s shake;
+  animation-fill-mode: forwards;
 }
 
 .pokedex {
@@ -72,4 +79,19 @@ header h1 {
   outline: none;
   font-style: italic;
   border-color: #1d31cc;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg)
+  }
+  33% {
+    transform: rotate(-5deg)
+  }
+  66% {
+    transform: rotate(5deg)
+  }
+  100% {
+    transform: (rotate(0deg))
+  }
 }

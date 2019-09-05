@@ -16,6 +16,12 @@ class App extends Component {
     this.releasePokemon = this.releasePokemon.bind(this)
   }
 
+  componentDidMount() {
+    axios.get('/api/pokemon').then(res => {
+      this.setState({pokemonCaught: res.data})
+    })
+  }
+
   catchPokemon(body) {
     axios.post('/api/pokemon', body).then(res => {
       this.setState({pokemonCaught: res.data})

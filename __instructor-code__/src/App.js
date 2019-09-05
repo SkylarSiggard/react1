@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Header from './components/Header'
 import Finder from './components/Finder'
 import Pokedex from './components/Pokedex'
 import axios from 'axios'
-
 
 class App extends Component {
   constructor() {
@@ -16,35 +15,38 @@ class App extends Component {
     this.saveName = this.saveName.bind(this)
     this.releasePokemon = this.releasePokemon.bind(this)
   }
+
   catchPokemon(body) {
     axios.post('/api/pokemon', body).then(res => {
       this.setState({pokemonCaught: res.data})
     })
   }
+
   saveName(id, body) {
     axios.put(`/api/pokemon/${id}`, body).then(res => {
       this.setState({pokemonCaught: res.data})
     })
   }
+
   releasePokemon(id) {
     axios.delete(`/api/pokemon/${id}`).then(res => {
       this.setState({pokemonCaught: res.data})
     })
   }
-
+  
   render() {
     return (
       <div className="App">
-        <Header/>
-        <Finder catchFn={this.catchPokemon}/>
+        <Header />
+        <Finder catchFn={this.catchPokemon} />
         <Pokedex 
-          pokemonList={this.state.pokemonCaught}
+          pokemonList={this.state.pokemonCaught} 
           saveFn={this.saveName}
           releaseFn={this.releasePokemon}
-        />        
+        />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

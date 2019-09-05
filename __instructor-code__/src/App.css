@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
 .App {
   text-align: center;
-  height: 100vh;
-  background: linear-gradient( rgb(252, 6, 6),45%, rgb(8, 0, 0) 50%, #eee);
 }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #FFDE00, rgb(255, 242, 155));
+}
+
 header h1 {
-  font-family: 'bangers', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  background: yellow;
+  color: #cc0000;
 }
 
 .finder {
@@ -28,11 +32,9 @@ header h1 {
   flex-wrap: wrap;
 }
 
-.pokemon button{
-  border: none;
-  background: blue;
-  border-radius: 20px;
-  color: white;
+.pokemon {
+  width: 25%;
+  height: 180px;
 }
 .pokemon input {
   display: block;
@@ -54,18 +56,20 @@ header h1 {
   font-weight: 700;
   font-size: .8rem;
 }
+.pokemon button:hover {
+  background: #1d31cc;
+  cursor: pointer;
+}
 .editor button {
   margin: .183rem;
-  }
-  .pokemon button:hover {
-    background: #1a288f;
-    cursor: pointer;
-  }
-
-  .editor input {
-    border-radius: 7px;
-    border: 1px solid #333;
-    padding: .2rem;
-  }
-
-  
+}
+.editor input {
+  border-radius: 7px;
+  border: 1px solid #333;
+  padding: .2rem;
+}
+.editor input:focus {
+  outline: none;
+  font-style: italic;
+  border-color: #1d31cc;
+}

@@ -38,6 +38,11 @@ header h1 {
   display: flex;
   flex-wrap: wrap;
 }
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: #cc0000;
+  cursor: pointer;
+}
 
 .pokemon {
   width: 25%;

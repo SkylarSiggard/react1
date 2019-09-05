@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Finder from './components/Finder'
 import Pokedex from './components/Pokedex'
 import axios from 'axios'
+import ashVoice from './assets/ashVoice.m4a'
 
 class App extends Component {
   constructor() {
@@ -41,10 +42,12 @@ class App extends Component {
   }
   
   render() {
+    const talk = new Audio(ashVoice)
     return (
       <div className="App">
         <Header />
         <Finder catchFn={this.catchPokemon} />
+        <h2 onClick={() => talk.play()}>Pokédex</h2>
         <Pokedex 
           pokemonList={this.state.pokemonCaught} 
           saveFn={this.saveName}
